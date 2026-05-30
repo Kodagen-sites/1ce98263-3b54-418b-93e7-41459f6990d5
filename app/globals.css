@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #fbfbfa;
+  --fg-color: #3a3d45;
+  --surface-color: #eaeaea;
+  --primary-color: #3a3d45;
+  --accent-color: #9ca0a8;
+}
+
+html,
+body {
+  background: var(--bg-color);
+  color: var(--fg-color);
+  font-family: var(--font-body, "Inter", system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.section-pad {
+  padding-top: clamp(48px, 6vw, 96px);
+  padding-bottom: clamp(48px, 6vw, 96px);
+}
+
+.cinematic-scroll::-webkit-scrollbar {
+  display: none;
+}
+.cinematic-scroll {
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--primary-color);
+  color: var(--bg-color);
+}
+
+body {
+  overflow-x: clip;
+}
